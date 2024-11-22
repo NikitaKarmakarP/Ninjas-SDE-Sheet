@@ -1,0 +1,24 @@
+bool checkPalindrome(string& str,int s,int e){
+
+  if (s <= e) {
+
+    if (str[s] != str[e])
+
+      return false;
+
+   return checkPalindrome(str, ++s, --e);
+
+  }
+
+}
+
+ 
+
+bool isPalindrome(string& str) {
+
+    // Write your code here.
+
+    return checkPalindrome(str,0,str.size()-1);
+
+}
+
