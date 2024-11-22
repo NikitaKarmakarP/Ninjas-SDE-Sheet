@@ -1,0 +1,19 @@
+int calcGCD(int n, int m){
+
+    // Write your code here.
+
+    while(m!=0)
+
+    {
+
+        int div=m;
+
+        m=n%m;
+
+        n=div;
+
+    }
+
+    return n;
+
+}
