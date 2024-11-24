@@ -1,0 +1,33 @@
+public class Solution
+
+{
+
+    public static Node findMiddle(Node head)
+
+    {
+
+        // Write your code here.
+
+        Node s = head;
+
+        Node f= head;
+
+        while(f != null && f.next != null){
+
+            s=s.next;
+
+            if(f.next.next == null){
+
+                return s;
+
+            }
+
+            f=f.next.next;
+
+        }
+
+        return s;
+
+    }
+
+}
