@@ -1,0 +1,46 @@
+bool canEatAll(const vector<int>& piles, int h, int m) {
+
+    long long time = 0;
+
+    for (int bananas : piles) {
+
+        time += (bananas + m - 1) / m;
+
+    }
+
+    return time <= h;
+
+}
+
+ 
+
+int minimumRateToEatBananas(vector<int> v, int h) {
+
+    int left = 1; 
+
+    int right = *max_element(v.begin(), v.end()); 
+
+ 
+
+    while (left < right) {
+
+        int mid = left + (right - left) / 2;
+
+        if (canEatAll(v, h, mid)) {
+
+            right = mid;
+
+        } else {
+
+            left = mid + 1;
+
+        }
+
+    }
+
+    return left;
+
+}
+
+ 
+
