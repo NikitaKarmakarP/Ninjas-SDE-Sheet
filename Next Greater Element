@@ -1,0 +1,34 @@
+public class Solution {
+
+    public static int[] nextGreaterElement(int[] arr, int n) {
+
+        // Write your code here.
+
+        for(int i=0;i<n;i++){
+
+            boolean f=false;
+
+            for(int j=i+1;j<n;j++){
+
+                if(arr[i]<arr[j]){
+
+                    arr[i]=arr[j];
+
+                    f=true;
+
+                    break;
+
+                }
+
+            }
+
+            if(!f) arr[i]=-1;
+
+        }
+
+        return arr;
+
+    }
+
+}
+
