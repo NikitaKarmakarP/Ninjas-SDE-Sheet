@@ -1,0 +1,89 @@
+import java.util.List;
+
+import java.util.ArrayList;
+
+public class Solution {
+
+    public static List<List<String>> partition(String str) {
+
+        List<List<String>> ans = new ArrayList<>();
+
+        List<String> ds = new ArrayList<>();
+
+
+
+
+        partitionString(0,str,ans,ds);
+
+        return ans;
+
+    }
+
+
+
+
+
+    public static void partitionString(int ind,String str,  List<List<String>> ans,List<String>ds)
+
+    {
+
+if(ind==str.length())
+
+{       
+
+            ans.add(new ArrayList<>(ds));
+
+            return;
+
+}
+
+
+
+
+        for(int i=ind;i<=str.length()-1;i++)
+
+        {
+
+            if(palindromCheck(ind,i,str)== true){
+
+                ds.add(str.substring(ind,i+1));
+
+                partitionString(i+1,str,ans,ds);
+
+                ds.remove(ds.size()-1);
+
+            }    }
+
+    }
+
+
+
+
+    public static  boolean palindromCheck(int start, int  end, String str)
+
+    {  while(start<=end)
+
+                {
+
+                    if(str.charAt(start)==str.charAt(end))
+
+                    {
+
+                        start++;
+
+                        end --;
+
+                    }
+
+                    else{
+
+                        return false;
+
+                    }
+
+                }
+
+                return true; }
+
+}
+
