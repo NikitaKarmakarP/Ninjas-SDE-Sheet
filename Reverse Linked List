@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+
+Node* reverseLinkedList(Node *head)
+
+{
+
+    // Write your code here
+
+    Node *temp=head;
+
+    int cnt=0;
+
+    while(temp!=NULL){
+
+        cnt++;
+
+        temp=temp->next;
+
+    }
+
+    vector<int>arr(cnt);
+
+    int j=0;
+
+    temp=head;
+
+    while(temp!=NULL){
+
+        arr[j]=temp->data;
+
+        j++;
+
+        temp=temp->next;
+
+    }
+
+    reverse(arr.begin(),arr.end());
+
+    temp=head;
+
+    j=0;
+
+    while(temp!=NULL){
+
+        temp->data=arr[j];
+
+        j++;
+
+        temp=temp->next;
+
+    }
+
+    return head;
+
+}
+
