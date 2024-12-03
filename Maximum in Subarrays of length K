@@ -1,0 +1,67 @@
+import java.util.*;
+
+public class Solution 
+
+{
+
+ 
+
+    public static void printSubarrayMax(int[] arr, int n, int k) {
+
+ 
+
+    if (k == 0) {
+
+            return;
+
+    }
+
+    
+
+     else {
+
+            Deque<Integer> dq = new LinkedList<>();
+
+            for (int i = 0; i < n; i++) {
+
+ 
+
+                // removing elements from window
+
+                if (!dq.isEmpty() && dq.peekFirst() == i - k) {
+
+                    dq.pollFirst();
+
+                }
+
+                  
+
+                // removing invalid elements
+
+                while (!dq.isEmpty() && arr[dq.peekLast()] <= arr[i]) {
+
+                    dq.pollLast();
+
+                }
+
+ 
+
+                dq.offerLast(i);
+
+ 
+
+                if (i >= k - 1) {
+
+                    System.out.print(arr[dq.peekFirst()] + " ");
+
+                }
+
+            }
+
+        }
+
+    }
+
+ 
+
+}
