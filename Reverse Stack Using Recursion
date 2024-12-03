@@ -1,0 +1,47 @@
+import java.util.Stack;
+
+ 
+
+public class Solution {
+
+    
+
+    public static void bottomStack(Stack<Integer> stack,int x) {
+
+        if(stack.isEmpty()){
+
+            stack.push(x);
+
+            return;
+
+        }
+
+        int top=stack.pop();
+
+        bottomStack(stack, x);
+
+        stack.push(top);
+
+    }
+
+    public static void reverseStack(Stack<Integer> stack){
+
+        if(stack.size()==1){
+
+            return;
+
+        }
+
+        int top=stack.pop();
+
+        reverseStack(stack);
+
+        bottomStack(stack, top);
+
+    }
+
+ 
+
+}
+
+java
