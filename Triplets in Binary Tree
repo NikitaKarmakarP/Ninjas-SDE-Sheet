@@ -1,0 +1,98 @@
+vector<vector<int>> ans;
+
+ 
+
+void inorder(TreeNode<int>* root, int x)
+
+{
+
+       if(root==NULL)
+
+       return ;
+
+       if(root->left!=NULL)
+
+       {
+
+           if(root->left->left!=NULL)
+
+           {
+
+               if(root->val+root->left->val+root->left->left->val>x)
+
+               ans.push_back({root->val,root->left->val,root->left->left->val});
+
+ 
+
+           }
+
+            if(root->left->right!=NULL)
+
+           {
+
+               if(root->val+root->left->val+root->left->right->val>x)
+
+               ans.push_back({root->val,root->left->val,root->left->right->val});
+
+ 
+
+           }
+
+ 
+
+       }
+
+ 
+
+       if(root->right!=NULL)
+
+       {
+
+           if(root->right->left!=NULL)
+
+           {
+
+               if(root->val+root->right->val+root->right->left->val>x)
+
+               ans.push_back({root->val,root->right->val,root->right->left->val});
+
+ 
+
+           }
+
+            if(root->right->right!=NULL)
+
+           {
+
+               if(root->val+root->right->val+root->right->right->val>x)
+
+               ans.push_back({root->val,root->right->val,root->right->right->val});
+
+ 
+
+           }
+
+ 
+
+       }
+
+         inorder(root->left,x);
+
+         inorder(root->right,x);
+
+ 
+
+}
+
+vector<vector<int>> findTriplets(TreeNode<int>* root, int x) 
+
+{
+
+    ans.clear();
+
+   inorder(root,x);
+
+   return ans;
+
+}
+
