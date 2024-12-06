@@ -1,0 +1,21 @@
+bool isUni(BinaryTreeNode<int>* root, int &count){
+    if(root==NULL) return true;
+    bool l = isUni(root->left, count);
+    bool r = isUni(root->right, count);
+    if(l && r){
+        if(root->left != NULL && root->data != root->left->data ||
+        root->right != NULL && root->data != root->right->data){
+            return false;
+        }
+        count++;
+        return true;
+    }
+    else return false;
+}
+int countUnivalTrees(BinaryTreeNode<int> *root)
+{
+    int count = 0;
+    isUni(root, count);
+    return count;
+    
+}
