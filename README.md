@@ -43,20 +43,8 @@ solving skills and ace coding interviews.
 
 # 📂 Folder Structure
 
-Ninjas-SDE-Sheet/
-├── Arrays/
-│   ├── Problem1.md
-│   ├── Problem2.cpp
-│   └── ...
-├── LinkedLists/
-│   ├── Problem1.java
-│   ├── Problem2.md
-│   └── ...
-├── DynamicProgramming/
-│   ├── Problem1.py
-│   └── ...
-├── README.md
-└── CONTRIBUTING.md
+![image](https://github.com/user-attachments/assets/6f9a552a-c5eb-4043-922c-b07a2a4b3d41)
+
 
 # 🏆 Goals
 - Practice at least 1-2 problems daily.
