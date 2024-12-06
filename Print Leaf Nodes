@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> getLeafNodes(BinaryTreeNode<int> *root) {
+  if (!root)
+    return {};
+
+  queue<pair<BinaryTreeNode<int> *, pair<int, int>>> q;
+  q.push({root, {0, 0}});
+
+  vector<vector<int>> nodes;
+  while (!q.empty()) {
+    int n = q.size();
+    while (n--) {
+      auto p = q.front();
+      q.pop();
+      BinaryTreeNode<int> *node = p.first;
+      int h_level = p.second.first, v_level = p.second.second;
+
+      if (!node->left and !node->right) {
+        nodes.push_back({node->data, h_level, v_level});
+        continue;
+      }
+
+      if (node->left)
+        q.push({node->left, {h_level + 1, v_level - 1}});
+
+      if (node->right)
+        q.push({node->right, {h_level + 1, v_level + 1}});
+    }
+  }
+
+  sort(nodes.begin(), nodes.end(), [&](vector<int> &a, vector<int> &b) {
+    if (a[2] != b[2])
+      return a[2] < b[2];
+
+    if (a[1] != b[1])
+      return a[1] < b[1];
+
+    return a[0] < b[0];
+  });
+
+  vector<int> v;
+  for (auto p : nodes)
+    v.push_back(p[0]);
+
+  return v;
+}
