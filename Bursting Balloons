@@ -1,0 +1,44 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+from sys import stdin, setrecursionlimit
+setrecursionlimit(10**7)
+
+
+def burstingBalloons(arr, n):
+    # Write your code here.
+   
+    mpp = {}
+    for i in range(n):
+        if arr[i] in mpp:
+            mpp[arr[i]] -= 1
+            if mpp[arr[i]]==0:
+                del mpp[arr[i]]
+    
+        if arr[i]-1 in mpp:
+            mpp[arr[i]-1] +=1
+        else:
+            mpp[arr[i]-1] = 1
+        #print(mpp)
+    #print(mpp)
+    ans = 0
+    for k in mpp.keys():
+        ans += mpp[k]
+    return ans
+        
+
+# Taking Input using Fast I/O.
+def takeInput():
+
+    n = int(stdin.readline().strip())
+    arr = list(map(int, stdin.readline().strip().split(" ")))
+
+    return arr, n
+
+
+# Main.
+arr, n = takeInput()
+ans = burstingBalloons(arr, n)
+print(ans)
