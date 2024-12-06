@@ -4,10 +4,9 @@
  Welcome to the Ninjas SDE Sheet repository! This is your go-to resource for mastering Data Structures and Algorithms (DSA) concepts and cracking technical interviews. 🚀
 
 # 🌟 About the Ninjas SDE Sheet
--The Ninjas SDE Sheet is a curated collection of essential DSA problems, categorized by difficulty and topic. It is designed to help software developers, students, and coding enthusiasts build strong problem- 
+- The Ninjas SDE Sheet is a curated collection of essential DSA problems, categorized by difficulty and topic. It is designed to help software developers, students, and coding enthusiasts build strong problem- 
 solving skills and ace coding interviews.
-
--Each problem in the sheet is chosen based on its importance in real-world interviews conducted by top tech companies like Google, Amazon, Meta, and Microsoft.
+- Each problem in the sheet is chosen based on its importance in real-world interviews conducted by top tech companies like Google, Amazon, Meta, and Microsoft.
 
 # 📚 Topics Covered
 # The sheet covers the most important DSA topics such as:
