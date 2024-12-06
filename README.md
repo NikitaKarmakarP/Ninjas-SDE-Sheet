@@ -42,10 +42,8 @@ solving skills and ace coding interviews.
 - Explore the categorized problems in the problems folder.
 
 # 📂 Folder Structure
-- plaintext
-- Copy code
-- Ninjas-SDE-Sheet/
-  
+
+Ninjas-SDE-Sheet/
 ├── Arrays/
 │   ├── Problem1.md
 │   ├── Problem2.cpp
@@ -59,6 +57,7 @@ solving skills and ace coding interviews.
 │   └── ...
 ├── README.md
 └── CONTRIBUTING.md
+
 # 🏆 Goals
 - Practice at least 1-2 problems daily.
 - Complete the sheet in 90 days for maximum impact.
