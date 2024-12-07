@@ -1,0 +1,87 @@
+#include<bits/stdc++.h>
+
+int fun(vector<int> &a,int s)
+
+{
+
+int x=1;
+
+int y=0;
+
+for(int i=0;i<a.size();i++)
+
+{
+
+if(y+a[i]<=s)
+
+{
+
+y+=a[i];
+
+}
+
+else
+
+{
+
+x++;
+
+y=a[i];
+
+}
+
+}
+
+return x;
+
+}
+
+int count(vector<int> &a,int k)
+
+{
+
+int low=*max_element(a.begin(),a.end());
+
+int high=accumulate(a.begin(),a.end(),0);
+
+ 
+
+while(low<=high)
+
+{
+
+int mid=(low+high)/2;
+
+int z=fun(a,mid);
+
+if(z>k)
+
+{
+
+low=mid+1;
+
+}
+
+else
+
+{
+
+high=mid-1;
+
+}
+
+}
+
+return low;
+
+}
+
+int largestSubarraySumMinimized(vector<int> a, int k) {
+
+// Write Your Code Here
+
+return count(a,k);
+
+ 
+
+}
